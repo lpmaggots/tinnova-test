@@ -1,0 +1,115 @@
+@use '../base/variables';
+
+// Mixin para estilos básicos de botão
+@mixin button-base($bg-color, $text-color, $border: none) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bg-color;
+  color: $text-color;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 16px;
+  border: $border;
+  border-radius: variables.$radius-md;
+  height: variables.$button-height;
+  cursor: pointer;
+}
+
+// Mixin para hover com opacidade (passa o valor da opacidade desejada)
+@mixin button-hover-opacity($opacity-value) {
+  &:hover {
+    opacity: $opacity-value;
+  }
+}
+
+// Mixin para estado disabled
+@mixin button-disabled {
+  &--disabled {
+    background-color: variables.$color-grey-light-4;
+    color: variables.$color-grey-light-1;
+    cursor: not-allowed;
+  }
+}
+
+// Mixin para loading state
+@mixin button-loading {
+  &--loading {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+    &::after {
+      content: '';
+      border: 3px solid variables.$color-white;
+      border-top: 3px solid transparent;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+// Btn primary
+.btn-primary {
+  @include button-base(variables.$color-primary, variables.$color-white);
+  @include button-hover-opacity(variables.$color-primary-hover);
+  @include button-disabled;
+  @include button-loading;
+
+  &--outlined {
+    @include button-base(transparent, variables.$color-primary, 2px solid variables.$color-primary);
+
+    &:hover {
+      background-color: variables.$color-primary;
+      color: variables.$color-white;
+      opacity: 1;
+    }
+
+    &--disabled {
+      background-color: transparent;
+      border-color: variables.$color-grey-light-4;
+      color: variables.$color-grey-light-1;
+      cursor: not-allowed;
+      opacity: 1;
+    }
+  }
+}
+
+// Btn error
+.btn-error {
+  @include button-base(variables.$color-error, variables.$color-white);
+  @include button-hover-opacity(variables.$color-error-hover);
+  @include button-disabled;
+}
+
+// Btn edit
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+
+  &:hover {
+    opacity: variables.$color-primary-hover;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: variables.$color-primary;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

@@ -1,0 +1,43 @@
+@use "sass:map";
+
+// Fonts
+$font-family-base: 'Arial', sans-serif;
+
+// Spacing
+$spacing-0: 0;
+$spacing-1: 4px;
+$spacing-2: 8px;
+$spacing-3: 16px;
+$spacing-4: 24px;
+$spacing-5: 32px;
+$spacing-6: 48px;
+
+// Border Radius
+$radius-sm: 10px;
+$radius-md: 30px;
+
+// Colors
+$color-black: #000;
+$color-white: #fff;
+
+$color-grey-dark-1: #888;
+$color-grey-light-1: #ddd;
+$color-grey-light-2: #e0e0e0;
+$color-grey-light-3: #f1f9f9;
+$color-grey-light-4: #f6f6f6;
+$color-grey-border: #ccc;
+$color-grey-border-light: #ddd;
+$color-text-dark: #333;
+$color-primary: #20d1c1;
+$color-primary-light: #d0f5f2;
+$color-primary-hover: 0.7;
+$color-error: #e76e72;
+$color-error-hover: 0.7;
+
+// Form
+$form-input-padding: 10px;
+$form-input-font-weight: bold;
+
+// Button
+$button-width: 100%;
+$button-height: 60px;

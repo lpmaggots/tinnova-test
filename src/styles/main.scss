@@ -1,0 +1,17 @@
+@use './base/reset';
+@use './base/_spacing';
+@use './base/variables';
+@use './components/table.scss';
+@use './components/inputs.scss';
+@use './components/buttons.scss';
+@use './components/modal.scss';
+
+body {
+  font-family: variables.$font-family-base;
+  overflow-x: hidden;
+}
+.container {
+  width: 100vw;
+  max-width: 1200px;
+  margin: 0 auto;
+}
