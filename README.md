@@ -19,6 +19,8 @@ Desenvolver um app front-end com **Um formulário e uma listagem de usuários**:
    * Permitir exclusão dos itens
    * *(Plus)* Permitir edição dos dados
 
+Link do Netlify: https://tinnnova-test.netlify.app/
+
 ---
 
 ## ✅ Requisitos
